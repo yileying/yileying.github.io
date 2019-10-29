@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /files/ # Block the /files/ directory.
+Disallow: /projects/
+Disallow: /assets/
+Disallow: *.pdf  # Block pdf files. Non-standard but works for major search engines.

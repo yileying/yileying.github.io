@@ -1,0 +1,80 @@
+
+<!-- include A-Frame  -->
+<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+<!-- include ar.js -->
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+
+
+
+<!--------------------------------------------------------------------------
+--  Attention:
+--	1. All the obj, mtl and image files should be uploaded to one folder
+--  2. All the obj/mtl files should be named as PrefixObject.obj/mtl, e.g. humanhead.obj/mtl, sheepimage1.obj/mtl. Prefix part: e.g. patient name, dates; Object part: e.g. 'brain', 'head'. When the object is a plane hosting a 2D image, the Object part should start with 'image', e.g. 'image1','image-mri'.
+--  3. The mtl file for hosing images should be updated with the filename of the image. 
+--  4. The '*.patt' files for customed markers are uploaded to a webserver
+--  5. Edit and double check the values specified in the first section of the script in the body
+---------------------------------------------------------------------------->
+
+
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace; background-color: black;  text-shadow: 1px 1px #666666'>
+	
+	
+	<!--Create a button to show/hide the bulky parameter adjustment area-->
+	<div style='position: fixed; top: 5px; right: 5px; z-index: 3;'>
+		<button onclick="showhideProperties()">Hide/Show</button>
+	</div>
+	
+	<!--Create a div to tell the user about the WebApp, the contents are created in the script-->
+	<div id='aboutdiv' style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 2;'>
+	</div>
+	
+	<!--Create a div to hold the checkboxes controlling which objects to be shown, the checkboxes are created in the script-->
+	<div id='optiondiv' style='position: fixed; top: 25px; width:100%; text-align: center; z-index: 2;'>
+		Show: 
+	</div>
+	
+	<!--Create text inputs to adjust size/rotation/position of the objects-->
+	<!--The default inputs are the pre-adjusted values for the portable magnets with real scale when the marker side length is 5cm.-->
+	<!--Here all the 3D objects will be adjusted together, except for the imagem which can be adjusted separately-->
+	<div id='propertydiv' style='position: fixed; top: 40px; width:100%; text-align: center; z-index: 1;'>
+		
+		<p><button onclick="Setfunction()">Apply</button>
+		Object Properties: Size<input type="text" id="obsize" value="0.2" size="2"></p>
+		
+		<p>Rotation: x<input type="text" id="obrotationx" value="0" size="2">
+		y<input type="text" id="obrotationy" value="0" size="2">
+		z<input type="text" id="obrotationz" value="0" size="2">
+		
+		Position: x<input type="text" id="obpositionx" value="2.5" size="2">
+		y<input type="text" id="obpositiony" value="-2.5" size="2">
+		z<input type="text" id="obpositionz" value="0" size="2">
+		</p>
+		
+		
+		
+		
+		<p>Image Properties (relative to the model): 
+		Width<input type="text" id="imsizex" value="1" size="2">
+		Height<input type="text" id="imsizez" value="1" size="2">
+		</p>
+		
+		<p>Rotation: x<input type="text" id="imrotationx" value="0" size="2">
+		y<input type="text" id="imrotationy" value="0" size="2">
+		z<input type="text" id="imrotationz" value="0" size="2">
+		Position: x<input type="text" id="impositionx" value="0" size="2">
+		y<input type="text" id="impositiony" value="0" size="2">
+		z<input type="text" id="impositionz" value="0" size="2">
+		</p>
+		
+		<!--Create a drop-down list to switch between different models--> 
+		<!--<select name="model" id="obj_mod">
+			<option value="obj: url(/~yile/ARnontranswholeskull.obj); ">mussel</option>
+			<option value="obj: url(/~yile/ARhalf.obj); ">paua</option>
+			</select> -->
+	</div>
+	
+<script src="ar_code.js"></script>
+</body>
+
+
