@@ -1,11 +1,18 @@
-
+<head>
 <!-- include A-Frame  -->
 <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
 <!-- include ar.js -->
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 
+<script type="text/javascript">
+  !function(a,b,c,d,e,f,g,h){a.RaygunObject=e,a[e]=a[e]||function(){
+  (a[e].o=a[e].o||[]).push(arguments)},f=b.createElement(c),g=b.getElementsByTagName(c)[0],
+  f.async=1,f.src=d,g.parentNode.insertBefore(f,g),h=a.onerror,a.onerror=function(b,c,d,f,g){
+  h&&h(b,c,d,f,g),g||(g=new Error(b)),a[e].q=a[e].q||[],a[e].q.push({
+  e:g})}}(window,document,"script","//cdn.raygun.io/raygun4js/raygun.min.js","rg4js");
+</script>
 
-
+</head>
 <!--------------------------------------------------------------------------
 --  Attention:
 --	1. All the obj, mtl and image files should be uploaded to one folder
@@ -75,6 +82,11 @@
 	</div>
 	
 <script src="ar_code.js"></script>
+<!--RayGun-->
+<script type="text/javascript">
+  rg4js('apiKey', 'nuUqRYLk617N8YXFss7g');
+  rg4js('enableCrashReporting', true);
+</script>
 </body>
 
 
